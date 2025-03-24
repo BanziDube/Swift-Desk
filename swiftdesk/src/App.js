@@ -1,11 +1,11 @@
-
-import ForgotPassword from './ForgotPassword';
-import ResetPassword from './ResetPassword'; // Import the ForgotPassword component
+import React from "react";
+import RegisterPage from "./RegisterPage";
+import "./index.css";
 
 function App() {
   return (
-    <div className="App">
-      <ForgotPassword /> {/* Render the ForgotPassword component */}
+    <div>
+      <RegisterPage />
     </div>
   );
 }
