@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
-import './index.css'; 
-
+import { useNavigate } from 'react-router-dom';
+import './index.css';
 
 const Login = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const navigate = useNavigate(); // Initialize useNavigate hook
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -14,8 +15,11 @@ const Login = () => {
       return;
     }
 
-    // Simulate a login action
+    // Simulate a login action (add your authentication logic here)
     alert('Login successful!');
+    
+    // After successful login, navigate to the EmployeeQueryPage
+    navigate('/employee-query');  // Replace with the actual route for EmployeeQueryPage
   };
 
   return (

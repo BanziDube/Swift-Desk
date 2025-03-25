@@ -1,5 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap");
-
+/* Global Variables */
 :root {
   --white-color: hsl(0, 0%, 100%);
   --black-color: hsl(0, 0%, 0%);
@@ -59,6 +58,7 @@ img {
   color: black;
 }
 
+/* Sidebar Styling */
 .sidebar {
   width: 4rem; /* Slimmer sidebar */
   background-color: var(--black-color);
@@ -74,17 +74,19 @@ img {
   cursor: pointer;
   margin-top: 31rem;
   width: 30%;
+  font-weight: bold;
 }
 
-.main-content  {
-    background-color: transparent;
-    padding: 20px;
-    border-radius: 10px;
-    width: 800px;
-    max-width: 800px; /* Wider form */
-    backdrop-filter: blur(8px); /* Apply blur effect to the background */
-    -webkit-backdrop-filter: blur(8px); /* For Safari */
-    border: 2px solid rgba(255, 255, 255, 0.3); /* Optional border to make it stand out */
+/* Main content styling */
+.main-content {
+  background-color: transparent;
+  padding: 20px;
+  border-radius: 10px;
+  width: 800px;
+  max-width: 800px; /* Wider form */
+  backdrop-filter: blur(8px); /* Apply blur effect to the background */
+  -webkit-backdrop-filter: blur(8px); /* For Safari */
+  border: 2px solid rgba(255, 255, 255, 0.3); /* Optional border to make it stand out */
 }
 
 .header {
@@ -127,6 +129,128 @@ img {
   margin-bottom: 1.5rem;
 }
 
+/* Chat Container to hold messages */
+.chat-container {
+  position: relative;
+}
+
+/* Message Box Styling */
+/* Message Box Styling */
+.message-box {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  height: 250px; /* Adjusted to make the box taller */
+  overflow-y: auto; /* Ensure scrolling when content overflows */
+  position: relative;
+}
+
+.message-history {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 50px; /* Adjust the height of the input field */
+  overflow-y: auto;
+  padding-right: 10px;
+}
+
+.message-bubble {
+  padding: 10px;
+  margin: 5px;
+  border-radius: 15px;
+  font-size: 14px;
+  max-width: 70%;
+  word-wrap: break-word;
+  line-height: 1.5;
+  margin-bottom: 5px; /* Added margin between bubbles */
+}
+
+/* Message Alignment for User and Respondent */
+.message-bubble.user {
+  background-color: #0078d4;
+  color: white;
+  text-align: right;
+  margin-left: auto;
+}
+
+.message-bubble.respondent {
+  background-color: #e0e0e0;
+  color: black;
+  text-align: left;
+  margin-right: auto;
+}
+
+/* Message input field inside the box */
+.message-input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  margin-top: 10px;
+  resize: none;
+}
+
+.icon-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0;
+}
+
+.submit-button {
+  width: 100%;
+  padding: 10px;
+  background-color: var(--primary-color);
+  color: white;
+  font-size: 1.1rem;
+  font-weight: var(--font-medium);
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.submit-button:hover {
+  background-color: grey;
+}
+
+/* Icon Buttons Positioned on the Left */
+.icon-buttons .icon {
+  cursor: pointer;
+  color: var(--black-color); /* Make icons black */
+}
+
+
+.submit-button {
+  width: 50%;
+  padding: 1rem;
+  background-color: var(--primary-color);
+  color: var(--white-color);
+  font-size: 1.1rem;
+  font-weight: var(--font-medium);
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  margin-top: 1.5rem;
+  display: block;
+  margin-left: auto;
+  margin-right: auto; /* Center the button */
+}
+
+.submit-button:hover {
+  background-color: grey;
+}
+
+/* Input Fields */
 .input-field {
   margin-bottom: 1.5rem;
 }
@@ -165,6 +289,7 @@ img {
 .icon-buttons .icon {
   cursor: pointer;
   color: var(--black-color); /* Make icons black */
+  font-weight: bold; /* Make icons bold */
 }
 
 .submit-button {

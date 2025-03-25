@@ -97,7 +97,7 @@ const ForgotPassword = () => {
           Send Reset Link
         </button>
         <p className="login__register">
-          Remembered your password? <a href="#">Login</a>
+          Remembered your password? <a href="LoginPage.jsx">Login</a>
         </p>
       </form>
     </div>
