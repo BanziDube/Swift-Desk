@@ -7,9 +7,9 @@
   --normal-font-size: 1rem;
   --small-font-size: 0.813rem;
   --font-medium: 500;
-  --primary-color: #2D87F0; /* Primary color */
-  --secondary-color: #FFD700; /* Secondary color for highlights */
-  --hover-color: rgba(255, 255, 255, 0.8); /* Hover effect */
+  --primary-color: #2D87F0;
+  --secondary-color: #FFD700;
+  --hover-color: rgba(255, 255, 255, 0.8);
 }
 
 /* Global Reset */
@@ -19,38 +19,20 @@
   margin: 0;
 }
 
-body,
-input,
-button {
-  font-size: var(--normal-font-size);
-  font-family: var(--body-font);
-}
-
 body {
   background-image: url(index.jpg);
-  background-color: #f4f4f9;
+  background-color: grey;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
   margin: 0;
-  padding: 0;
   color: var(--white-color);
-  position: center;
   background-size: cover;
   background-repeat: no-repeat;
 }
 
-a {
-  text-decoration: none;
-}
-
-img {
-  max-width: 100%;
-  height: auto;
-}
-
-/* Layout Styling */
+/* Layout */
 .employee-page {
   display: flex;
   height: 100vh;
@@ -58,9 +40,9 @@ img {
   color: black;
 }
 
-/* Sidebar Styling */
+/* Sidebar */
 .sidebar {
-  width: 4rem; /* Slimmer sidebar */
+  width: 4rem;
   background-color: var(--black-color);
   color: var(--white-color);
   display: flex;
@@ -77,25 +59,26 @@ img {
   font-weight: bold;
 }
 
-/* Main content styling */
+/* Main Content */
 .main-content {
   background-color: transparent;
   padding: 20px;
   border-radius: 10px;
   width: 800px;
-  max-width: 800px; /* Wider form */
-  backdrop-filter: blur(8px); /* Apply blur effect to the background */
-  -webkit-backdrop-filter: blur(8px); /* For Safari */
-  border: 2px solid rgba(255, 255, 255, 0.3); /* Optional border to make it stand out */
+  max-width: 800px;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 2px solid rgba(255, 255, 255, 0.3);
 }
 
+/* Header */
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
   background-color: grey;
-  color: var(--white-color);
+  color: black;
 }
 
 .header h1 {
@@ -107,226 +90,205 @@ img {
   cursor: pointer;
 }
 
-.employee-form-container {
-  padding: 2rem;
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.employee-form {
-  background-color: transparent;
-  padding: 20px;
-  border-radius: 10px;
-  width: 100%;
-  max-width: 600px; /* Wider form */
-}
-
-.employee-form h2 {
-  text-align: center;
-  font-size: 2rem;
-  margin-bottom: 1.5rem;
-}
-
-/* Chat Container to hold messages */
-.chat-container {
-  position: relative;
-}
-
-/* Message Box Styling */
-/* Message Box Styling */
+/* Message History Box */
+/* Message History Box */
 .message-box {
   width: 100%;
-  padding: 10px;
-  border-radius: 8px;
-  border: 1px solid #ccc;
+  padding: 15px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
   font-size: 14px;
   font-family: Arial, sans-serif;
+  height: 250px;
+  overflow-y: auto;
+  position: relative;
+  background-color: rgba(255, 255, 255, 0.1); /* Darker semi-transparent background */
+  color: black;
+  display: flex;
+  flex-direction: column-reverse; /* Keep the latest message at the bottom */
+}
+
+/* Messages inside history */
+.message-history {
+  overflow-y: auto;
+  padding: 10px;
+  max-height: 200px;
   display: flex;
   flex-direction: column;
-  height: 250px; /* Adjusted to make the box taller */
-  overflow-y: auto; /* Ensure scrolling when content overflows */
-  position: relative;
+  gap: 12px; /* Space between messages */
 }
 
-.message-history {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 50px; /* Adjust the height of the input field */
-  overflow-y: auto;
-  padding-right: 10px;
-}
-
-.message-bubble {
-  padding: 10px;
-  margin: 5px;
-  border-radius: 15px;
-  font-size: 14px;
-  max-width: 70%;
-  word-wrap: break-word;
-  line-height: 1.5;
-  margin-bottom: 5px; /* Added margin between bubbles */
-}
-
-/* Message Alignment for User and Respondent */
+/* User Message Bubble (Right aligned with Teams Blue) */
 .message-bubble.user {
-  background-color: #0078d4;
-  color: white;
-  text-align: right;
+  background-color: grey; /* Teams Blue */
+  color: black;
+  text-align: left;
   margin-left: auto;
+  padding: 8px 16px;
+  border-radius: 10px 10px 0 10px; /* Rounded edges for user */
+  max-width: 100%;
+  word-wrap: break-word;
+  line-height: 2;
+  font-size: 15px; /* Slightly larger font for better readability */
 }
 
+/* Respondent Message Bubble (Left aligned with Light Gray Background) */
 .message-bubble.respondent {
-  background-color: #e0e0e0;
+  background-color: grey; /* Light gray background */
   color: black;
   text-align: left;
   margin-right: auto;
+  padding: 8px 16px;
+  border-radius: 20px 20px 20px 0; /* Rounded edges for respondent */
+  max-width: 100%;
+  word-wrap: break-word;
+  line-height: 1.4;
+  font-size: 15px;
 }
 
-/* Message input field inside the box */
+/* Transparent Message Input */
+.message-input-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+
+/* Message Input */
 .message-input {
   width: 100%;
-  padding: 10px;
+  padding: 12px 15px;
   border-radius: 8px;
-  border: 1px solid #ccc;
+  border: 1px solid grey;
   font-size: 14px;
-  margin-top: 10px;
   resize: none;
+  background-color: rgba(255, 255, 255, 0.2); /* Transparent white */
+  color: black; /* Text color */
 }
 
+/* Placeholder Styling */
+.message-input::placeholder {
+  color:black;
+}
+
+/* Icon and Button Container */
+.icon-button-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+}
+
+/* Icon Buttons inside the message input */
 .icon-buttons {
   display: flex;
-  justify-content: space-between;
-  margin: 10px 0;
+  gap: 10px;
+  align-items: center;
 }
 
+.icon-buttons .icon {
+  cursor: pointer;
+  color: black;
+  position: relative;
+}
+
+/* Submit Button */
 .submit-button {
-  width: 100%;
+  width: 50px;
   padding: 10px;
   background-color: var(--primary-color);
-  color: white;
+  color: black;
   font-size: 1.1rem;
   font-weight: var(--font-medium);
-  border-radius: 5px;
+  border-radius: 8px;
   border: none;
   cursor: pointer;
-  margin-top: 1rem;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
+/* Submit Button Hover Effect */
 .submit-button:hover {
   background-color: grey;
 }
 
-/* Icon Buttons Positioned on the Left */
-.icon-buttons .icon {
-  cursor: pointer;
-  color: var(--black-color); /* Make icons black */
-}
-
-
-.submit-button {
-  width: 50%;
-  padding: 1rem;
-  background-color: var(--primary-color);
-  color: var(--white-color);
-  font-size: 1.1rem;
-  font-weight: var(--font-medium);
-  border-radius: 5px;
-  border: none;
-  cursor: pointer;
-  margin-top: 1.5rem;
-  display: block;
-  margin-left: auto;
-  margin-right: auto; /* Center the button */
-}
-
-.submit-button:hover {
-  background-color: grey;
-}
-
-/* Input Fields */
-.input-field {
-  margin-bottom: 1.5rem;
-}
-
-.input-field label {
-  display: block;
-  margin-bottom: 0.5rem;
-}
-
-.input-field input,
-.input-field textarea {
+/* Media Queries */
+/* Employee Form Container */
+.employee-form-container {
+  max-width: 100%; /* Allow the form to use the full width available */
   width: 100%;
-  padding: 1rem;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-  font-size: 1rem;
-  height: 20px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: transparent;
+  border-radius: 10px;
+  box-sizing: border-box;
 }
 
-.input-field textarea {
-  height: 200px;
-  margin-bottom: 80px;
-  padding-left: 50px; /* Space for icons */
-  position: relative; /* To position the icons inside */
+/* Employee Form */
+.employee-form {
+  width: 100%; /* Full width inside the container */
+  max-width: 1200px; /* Optional: Set a maximum width if needed */
+  padding: 20px;
+  background-color: grey; /* Light background */
+  border-radius: 10px;
+  box-sizing: border-box;
+  margin-top: 20px;
 }
 
-/* Icon Buttons Positioned on the Left */
-.icon-buttons {
-  position: absolute;
-  bottom: 10px;
-  left: 10px;
-  display: flex;
-  gap: 1rem;
-}
-
-.icon-buttons .icon {
-  cursor: pointer;
-  color: var(--black-color); /* Make icons black */
-  font-weight: bold; /* Make icons bold */
-}
-
-.submit-button {
-  width: 50%;
-  padding: 1rem;
-  background-color: var(--primary-color);
-  color: var(--white-color);
-  font-size: 1.1rem;
-  font-weight: var(--font-medium);
-  border-radius: 5px;
-  border: none;
-  cursor: pointer;
-  margin-top: 1.5rem;
-  display: block;
-  margin-left: auto;
-  margin-right: auto; /* Center the button */
-}
-
-.submit-button:hover {
-  background-color: grey;
-}
-
-/* Media Queries for Responsive Design */
+/* Adjustments for large screen sizes */
 @media screen and (min-width: 768px) {
-  .sidebar {
-    width: 5rem; /* Maintain slim sidebar for medium screens */
-  }
   .employee-form {
-    max-width: 800px;
+    max-width: 900px; /* Adjust the max-width on medium to large screens */
   }
 }
 
 @media screen and (min-width: 1024px) {
-  .sidebar {
-    width: 6rem; /* Slightly wider sidebar on larger screens */
-  }
   .employee-form {
-    max-width: 900px; /* Wider form on large screens */
+    max-width: 1000px; /* Adjust for even larger screens */
   }
 }
+
+
+.file-preview {
+  margin-top: 10px;
+}
+
+.file-img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.file-preview span {
+  font-size: 12px;
+  color: #888;
+  word-wrap: break-word;
+}
+
+.emoji-menu {
+  position: absolute;
+  bottom: 60px;
+  left: 10px;
+  background-color: white;
+  padding: 5px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.emoji-menu span {
+  font-size: 24px;
+}
+
+.emoji-preview {
+  font-size: 20px;
+}
+
