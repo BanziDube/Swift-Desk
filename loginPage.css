@@ -1,0 +1,303 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap");
+ 
+:root {
+  --white-color: hsl(0, 0%, 100%);
+  --black-color: hsl(0, 0%, 0%);
+  --body-font: "Poppins", sans-serif;
+  --h1-font-size: 1.75rem;
+  --normal-font-size: 1rem;
+  --small-font-size: 0.813rem;
+  --font-medium: 500;
+  --primary-color: #2D87F0; /* Primary color */
+  --secondary-color: #FFD700; /* Secondary color for highlights */
+  --hover-color: rgba(255, 255, 255, 0.8); /* Hover effect */
+}
+ 
+/* Global Reset */
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+ 
+body,
+input,
+button {
+  font-size: var(--normal-font-size);
+  font-family: var(--body-font);
+}
+ 
+body {
+  background-image: url(index.jpg);
+  background-color: #f4f4f9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  color: var(--white-color);
+  position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+ 
+a {
+  text-decoration: none;
+}
+ 
+img {
+  max-width: 100%;
+  height: auto;
+}
+ 
+/* Layout Styling */
+.employee-page {
+  display: flex;
+  height: 100vh;
+  width: 100%;
+  color: black;
+}
+ 
+.sidebar {
+  width: 4rem; /* Slimmer sidebar */
+  background-color: var(--black-color);
+  color: var(--white-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.5rem 0;
+  margin-left: 10px;
+}
+ 
+.sidebar .icon {
+  cursor: pointer;
+  margin-top: 31rem;
+  width: 30%;
+}
+ 
+.main-content  {
+    background-color: transparent;
+    padding: 20px;
+    border-radius: 10px;
+    width: 800px;
+    max-width: 800px; /* Wider form */
+    backdrop-filter: blur(8px); /* Apply blur effect to the background */
+    -webkit-backdrop-filter: blur(8px); /* For Safari */
+    border: 2px solid rgba(255, 255, 255, 0.3); /* Optional border to make it stand out */
+}
+ 
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: grey;
+  color: var(--white-color);
+}
+ 
+.header h1 {
+  font-size: var(--h1-font-size);
+  font-weight: var(--font-medium);
+}
+ 
+.header .menu-icon {
+  cursor: pointer;
+}
+ 
+.employee-form-container {
+  padding: 2rem;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+ 
+.employee-form {
+  background-color: transparent;
+  padding: 20px;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 600px; /* Wider form */
+}
+ 
+.employee-form h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+ 
+.input-field {
+  margin-bottom: 1.5rem;
+}
+ 
+.input-field label {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+ 
+.input-field input,
+.input-field textarea {
+  width: 100%;
+  padding: 1rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  height: 20px;
+}
+ 
+.input-field textarea {
+  height: 200px;
+  margin-bottom: 80px;
+  padding-left: 50px; /* Space for icons */
+  position: relative; /* To position the icons inside */
+}
+ 
+/* Icon Buttons Positioned on the Left */
+.icon-buttons {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  display: flex;
+  gap: 1rem;
+}
+ 
+.icon-buttons .icon {
+  cursor: pointer;
+  color: var(--black-color); /* Make icons black */
+}
+ 
+.submit-button {
+  width: 50%;
+  padding: 1rem;
+  background-color: var(--primary-color);
+  color: var(--white-color);
+  font-size: 1.1rem;
+  font-weight: var(--font-medium);
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  margin-top: 1.5rem;
+  display: block;
+  margin-left: auto;
+  margin-right: auto; /* Center the button */
+}
+ 
+.submit-button:hover {
+  background-color: grey;
+}
+ 
+/* Media Queries for Responsive Design */
+@media screen and (min-width: 768px) {
+  .sidebar {
+    width: 5rem; /* Maintain slim sidebar for medium screens */
+  }
+  .employee-form {
+    max-width: 800px;
+  }
+}
+ 
+@media screen and (min-width: 1024px) {
+  .sidebar {
+    width: 6rem; /* Slightly wider sidebar on larger screens */
+  }
+  .employee-form {
+    max-width: 900px; /* Wider form on large screens */
+  }
+}
+ 
+ 
+/* Container for the login form */
+.login {
+  width: 100%;
+  max-width: 400px;
+  padding: 20px;
+  background-color: grey;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+ 
+/* Title of the form */
+.login__title {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 24px;
+  font-weight: bold;
+}
+ 
+/* Content container for form inputs */
+.login__content {
+  margin-bottom: 20px;
+}
+ 
+/* Row of input fields */
+.login__row {
+  margin-bottom: 20px;
+}
+ 
+/* Box around each input */
+.login__box {
+  position: relative;
+}
+ 
+/* Input field styling */
+.login__input {
+  width: 100%;
+  padding: 10px;
+  padding-left: 30px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  outline: none;
+  font-size: 16px;
+}
+ 
+/* Label for input fields */
+.login__label {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 14px;
+  color: #888;
+  transition: 0.3s;
+}
+ 
+/* Focused state for input fields */
+.login__input:focus + .login__label,
+.login__input:not(:placeholder-shown) + .login__label {
+  top: -10px;
+  left: 10px;
+  font-size: 12px;
+  color: black;
+}
+ 
+/* Button styling */
+.login__button {
+  width: 100%;
+  padding: 12px;
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+ 
+.login__button:hover {
+  background-color: grey;
+}
+ 
+/* Link styling for forgot password */
+.login__register {
+  text-align: center;
+  margin-top: 10px;
+}
+ 
+.login__register a {
+  color: black;
+  text-decoration: none;
+}
+ 
+.login__register a:hover {
+  text-decoration: underline;
+}

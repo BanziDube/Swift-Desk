@@ -1,0 +1,162 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Technician Panel Wrapper */
+.technician-panel {
+  display: flex;
+  height: 100vh;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 120px; 
+  margin-top: 40px;
+  transition: width 0.3s ease-in-out;
+  background-color: rgb(58, 136, 42);
+  color: rgb(255, 255, 255);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 16px 0;
+  border-radius: 20px;
+}
+
+.sidebar:hover {
+  width: 120px; /* Expand on hover */
+}
+
+.sidebar-icon {
+  font-size: 30px;
+  margin-bottom: 24px;
+  cursor: pointer;
+  transition: margin-left 0.3s ease-in-out;
+}
+
+.sidebar:hover .sidebar-icon {
+  margin-left: 10px; /* Space icons out when expanded */
+}
+
+.sidebar-title {
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+  margin-left: 10px;
+  display: none;
+}
+
+.sidebar:hover .sidebar-title {
+  display: block; /* Show titles on hover */
+}
+
+/* Main Content */
+.main-content {
+  flex: 1;
+  padding: 24px;
+  background-color: rgba(66, 66, 66, 0.842);
+  width: 1200px;
+  margin-top: 40px;
+  margin-left: 20px; /* Offset for sidebar */
+  margin-right: 24px;
+  border-radius: 8px;
+}
+
+/* Messages */
+.message-box {
+  padding: 16px;
+  background-color: #f3f3f3;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  color: black; /* Text color set to black */
+}
+
+.message-box:hover {
+  background-color: #e0e0e0;
+}
+
+/* Chat Window */
+.chat-window {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 350px;
+  background-color: white;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  padding: 16px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  color: black; /* Text color set to black */
+}
+
+.chat-input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.send-button {
+  background-color: #007bff;
+  color: rgb(74, 204, 117);
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.send-button:hover {
+  background-color: #0056b3;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .technician-panel {
+    flex-direction: column; /* Stack sidebar and content on smaller screens */
+  }
+
+  .sidebar {
+    width: 100%;
+    height: 60px;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 0;
+    margin-left: 0;
+  }
+
+  .main-content {
+    margin-top: 20px;
+    padding: 16px;
+    width: 100%;
+  }
+
+ /* Chat Window */
+ /* Chat Window */
+ .chat-window {
+  position: fixed;
+  bottom: 20px;
+  left: 20px; /* Moves the chat window to the left side */
+  width: 350px;
+  background-color: white;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  padding: 16px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  z-index: 9999; /* Ensures it stays on top */
+}
+
+
+
+  .sidebar-title {
+    display: none;
+  }
+}
